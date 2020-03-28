@@ -1,0 +1,128 @@
+.covid-card {
+    padding: 8px;
+    margin: 8px 0;
+    border-radius: 8px;
+    font-family: 'Nunito', sans-serif;
+    box-shadow:
+    0 0.8px 0.8px rgba(0, 0, 0, 0.02),
+    0 2px 2px rgba(0, 0, 0, 0.028),
+    0 3.8px 3.8px rgba(0, 0, 0, 0.035),
+    0 6.7px 6.7px rgba(0, 0, 0, 0.042),
+    0 12.5px 12.5px rgba(0, 0, 0, 0.05),
+    0 30px 30px rgba(0, 0, 0, 0.07)
+}
+
+.covid-card-blue {
+    background: rgba(0, 123, 255, .0627451);
+
+}
+
+.covid-card-red {
+    background: rgba(255, 7, 58, .12549);
+
+}
+
+.covid-card-green {
+    background: rgba(40, 167, 69, .12549);
+
+}
+
+.covid-card-grey {
+    background: rgba(108, 117, 125, .0627451);
+
+}
+
+.covid-card-white {
+    background: rgb(255, 255, 255);
+    color: rgba(108, 117, 125, .8);
+
+}
+
+
+
+.card-container {
+    margin-top: 8px;
+    padding: 0 4px;
+}
+
+.count {
+    font-size: 3rem;
+    display: flex;
+    flex-direction: row;
+    font-weight: bold;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    min-height: 80px;
+}
+
+.card-desc {
+    min-height: 30px;
+}
+
+
+
+.covid-card-title {
+    justify-content: center;
+    align-items: center;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+.p-fix {
+    padding: 0 8px;
+}
+
+@media only screen and (max-width:768px) {
+    .count {
+        font-size: 2rem;
+    }
+    .covid-card-title {
+        font-size: 0.9em;
+    }
+}
+
+
+.material-icons {
+    display: inline-block;
+    position: absolute;
+    top: -2px;
+    right: -2px;
+    padding: .5rem 1.1rem;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 2;
+    opacity: 1;
+    transition: opacity 300ms ease-in-out;
+    color: #606060;
+    
+    
+  }
+  
+  .answer {
+    display: grid;
+    place-items: center;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    padding: 2em;
+    height: 100%;
+    border-radius: 1rem;
+    clip-path: circle(12% at 100% 0%);
+    transition: all 300ms ease-in-out;
+    z-index: 1;
+    
+    
+  }
+
+  p {
+    color: #033F52;
+    font-size: 1.5rem;
+  }
+  
+  .material-icons:hover + .answer {
+    background-color: #ffffff;
+    clip-path: circle(150% at 100% 0%);
+   }

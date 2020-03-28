@@ -1,0 +1,105 @@
+
+<div class="dashbord-container">
+    <section *ngIf="!flags.isError">
+        <div class="flex-container">
+            <h5 *ngIf="selectedCountry.toLowerCase() == 'all'" class="info-text">Showing results for all locations</h5>
+            <h5 *ngIf="selectedCountry.toLowerCase() != 'all'" class="info-text">Showing results for {{selectedCountry}}</h5>
+
+            <form class="form-inline">
+                <label style="padding-right: 10px;" for="exampleFormControlSelect1">Location</label>
+                <select class="form-control" name="country" id="exampleFormControlSelect1" [(ngModel)]="selectedCountry" (change)="onChangeCountry()">  
+                    <option>All</option>        
+                    <option *ngFor="let country of data?.countryList">{{country}}</option>
+                </select>
+            </form>
+        </div>
+
+        <div class="row card-container">
+            <div class="col-6 col-md-3 p-fix">
+                <div class="covid-card covid-card-red">
+                    <h6 class="covid-card-title">OVERALL CASES </h6>
+
+                    <span class="material-icons">expand_more
+                    </span>
+                    <div class="answer">
+                      <p>Active+Recovred+Death COVID-19 Cases</p>
+                    </div>
+                    <div class="covid-card-body">
+                        <p class="loading-text" *ngIf="!flags.isStatsLoaded">Hold On...</p>
+                        <div *ngIf="flags.isStatsLoaded">
+                            <h2 class="count">{{data?.total}}</h2>
+                            <div class="text-center card-desc">
+                                <small>{{data?.new}} new cases</small>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-6 col-md-3 p-fix">
+                <div class="covid-card covid-card-blue">
+                    <h6 class="covid-card-title">ACTIVE CASES </h6>
+                    <span class="material-icons">expand_more
+                    </span>
+                    <div class="answer">
+                      <p>Active COVID-19 Positive Cases</p>
+                    </div>
+                    <div class="covid-card-body">
+                        <p class="loading-text" *ngIf="!flags.isStatsLoaded">Hold On...</p>
+                        <div *ngIf="flags.isStatsLoaded">
+                            <h2 class="count">{{data?.active}}</h2>
+                            <div class="text-center card-desc">
+                                <small>{{data?.critical}} critical cases</small>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-6 col-md-3 p-fix">
+                <div class="covid-card covid-card-green">
+                    <h6 class="covid-card-title">RECOVERED </h6>
+                    <span class="material-icons">expand_more
+                    </span>
+                    <div class="answer">
+                      <p>Recovered COVID-19  Cases</p>
+                    </div>
+                    <div class="covid-card-body">
+                        <p class="loading-text" *ngIf="!flags.isStatsLoaded">Hold On...</p>
+
+                        <div *ngIf="flags.isStatsLoaded">
+                            <h2 class="count">{{data?.recovered}}</h2>
+                            <div class="text-center card-desc">
+                                <small></small>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-6 col-md-3 p-fix">
+                <div class="covid-card covid-card-grey">
+                    <h6 class="covid-card-title">DEATHS</h6>
+                    <span class="material-icons">expand_more
+                    </span>
+                    <div class="answer">
+                      <p>Dead COVID-19 Cases. RIP:-( 
+                      </p>
+                    </div>
+                    <div class="covid-card-body">
+                        <p class="loading-text" *ngIf="!flags.isStatsLoaded">Hold On...</p>
+
+                        <div *ngIf="flags.isStatsLoaded">
+                            <h2 class="count">{{data?.deaths}}</h2>
+                            <div class="text-center card-desc">
+                                <small>{{data?.newDeaths}} recent deaths</small>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</div>

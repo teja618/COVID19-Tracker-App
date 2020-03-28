@@ -1,0 +1,115 @@
+/* You can add global styles to this file, and also import other style files */
+
+@import url('https://fonts.googleapis.com/css?family=Cabin&display=swap');
+@import '~material-design-icons/iconfont/material-icons.css';
+@import url("https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css");
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Portfolio Regular' !important;
+    background: #f1f1f1 !important;
+}
+
+.info-text {
+    margin: 0;
+    font-size: 0.9em;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: #303030;
+    align-self: center;
+}
+
+.card-container {
+    margin-top: 8px;
+    padding: 0 8px;
+    ;
+}
+
+
+
+.flex-container {
+    display: flex;
+    flex-direction: row;
+    padding: 20px 0 0 0;
+    justify-content: space-between;
+}
+
+.neo-card {
+    padding: 8px;
+    margin: 8px 0;
+    border-radius: 8px;
+    background: #f1f1f1;
+    box-shadow: 5px 5px 10px #d9d9d9, -5px -5px 10px #ffffff;
+}
+
+.brand {
+    font-weight: 600;
+    font-size: 1.2em;
+}
+
+.bold {
+    font-weight: 600;
+}
+
+.custom-navbar {
+    background: #ffffff;
+}
+
+.loading-text {
+    display: flex;
+    min-height: 104px;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+}
+
+.p-fix {
+    padding: 0 8px;
+}
+
+@media only screen and (max-width:768px) {
+    .count {
+        font-size: 2.5rem;
+    }
+    .neo-card>h6 {
+        font-size: 0.9em;
+    }
+    .flex-container {
+        flex-direction: column-reverse;
+    }
+    .info-text {
+        margin-top: 8px;
+        align-self: flex-start;
+    }
+}
+
+
+.material-icons {
+    font-family: 'Material Icons';
+    font-weight: normal;
+    font-style: normal;
+    font-size: 24px;  /* Preferred icon size */
+    display: inline-block;
+    line-height: 1;
+    text-transform: none;
+    letter-spacing: normal;
+    word-wrap: normal;
+    white-space: nowrap;
+    direction: ltr;
+  
+    /* Support for all WebKit browsers. */
+    -webkit-font-smoothing: antialiased;
+    /* Support for Safari and Chrome. */
+    text-rendering: optimizeLegibility;
+  
+    /* Support for Firefox. */
+    -moz-osx-font-smoothing: grayscale;
+  
+    /* Support for IE. */
+    font-feature-settings: 'liga';
+  }
