@@ -1,8 +1,31 @@
-<nav class="navbar custom-navbar navbar-expand-lg navbar-dark bg-dark" >
-    <a class="navbar-brand brand" ><i class="fas fa-briefcase-medical"></i> COVID-19 Stats Tracker</a>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand brand" routerLink="/home"><i class="fas fa-briefcase-medical"></i> COVID-19</a>
+
+
+  <button class="navbar-toggler" type="button" (click)="toggleNavbar()">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+
+  <div class="collapse navbar-collapse" [ngClass]="{ 'show': navbarOpen }">
+    <ul class="navbar-nav mr-auto">
+
+      <li [routerLinkActive]="['active']">
+        <a class="nav-link"  routerLink="/home">Global Tracker</a>
+      </li>
+      <li [routerLinkActive]="['active']">
+        <a class="nav-link"  routerLink="/indian-states">India Tracker</a>
+      </li>
+
+
+    </ul>
+  </div>
 </nav>
-<section class="container-fluid">
-    <dashboard></dashboard>
+
+
+
+
+
+  <section class="container-fluid">
+    <router-outlet></router-outlet>
 </section>
-
-
