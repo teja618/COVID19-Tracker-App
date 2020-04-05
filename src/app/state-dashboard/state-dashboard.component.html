@@ -101,9 +101,11 @@
         </div>
     </section>
 </div>
+<br><br>
 
-
-<ag-grid-angular *ngIf="selectedState!='All'" 
+<div *ngIf=" RowsPresent "> 
+<h5 *ngIf="selectedState!= 'All'" class="info-text"> District wise Results Of {{selectedState}}</h5>
+<ag-grid-angular *ngIf="selectedState!='All' " 
 style="width: auto;"
     class="ag-theme-bootstrap"
     [rowData]="rowData"
@@ -111,7 +113,6 @@ style="width: auto;"
     (gridReady)="onGridReady($event)"
     [domLayout]="domLayout"
     (firstDataRendered)="onFirstDataRendered($event)"
-
     >
 </ag-grid-angular>
-
+</div>

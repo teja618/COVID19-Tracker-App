@@ -38,12 +38,18 @@ rowData = [];
 
 private gridApi;
 private gridColumnApi;
-private overlayLoadingTemplate;
-private overlayNoRowsTemplate;
+overlayLoadingTemplate;
+overlayNoRowsTemplate;
 domLayout: string;
+RowsPresent: boolean=false;
 
 
-  constructor(private apiService: ApiService) { }
+
+  constructor(private apiService: ApiService) { 
+    this.overlayNoRowsTemplate = "<span ag-overlay-loading-center>This is a custom 'no rows' overlay</span>";
+    this.overlayLoadingTemplate =
+    '<span class="ag-overlay-loading-center">Please wait while your rows are loading</span>';
+  }
 
   ngOnInit() {
     this.selectedState="All";
@@ -71,8 +77,9 @@ domLayout: string;
           if(item.state==stateName){
             this.statesData.stats=item.districtData;
             if(this.statesData.stats.length>0){
-              this.rowData=this.statesData.stats;
-            }
+              this.RowsPresent=true;
+              this.rowData=  this.statesData.stats          
+              }
           }
         });
       }
@@ -129,9 +136,10 @@ domLayout: string;
   }
 
   onChangeState() {
+    this.rowData=[];
+    this.RowsPresent=false;
     this.selectedState=="All"?this.getStatsByState("Total"):this.getStatsByState(this.selectedState);  
     this.selectedState=="All"?null :this.getDistrictsData(this.selectedState);
-    this.rowData=[];
   }
 
 }
