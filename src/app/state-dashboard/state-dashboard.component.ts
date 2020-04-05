@@ -105,7 +105,7 @@ RowsPresent: boolean=false;
           console.log(item);
           this.stateData.total = item.confirmed;
           this.stateData.active = item.active;
-          this.stateData.recovered = item.deltarecovered;
+          this.stateData.recovered = item.recovered;
           this.stateData.deaths = item.deaths;
           this.stateData.new = item.deltaconfirmed ? item.deltaconfirmed : 0;
           //this.stateData.critical = item.cases.critical ? item.cases.critical : 0;
