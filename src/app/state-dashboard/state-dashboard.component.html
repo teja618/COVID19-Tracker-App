@@ -100,5 +100,18 @@
             </div>
         </div>
     </section>
-
 </div>
+
+
+<ag-grid-angular *ngIf="selectedState!='All'" 
+style="width: auto;"
+    class="ag-theme-bootstrap"
+    [rowData]="rowData"
+    [columnDefs]="columnDefs"
+    (gridReady)="onGridReady($event)"
+    [domLayout]="domLayout"
+    (firstDataRendered)="onFirstDataRendered($event)"
+
+    >
+</ag-grid-angular>
+

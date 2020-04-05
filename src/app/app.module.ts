@@ -7,6 +7,9 @@ import { ApiService } from './api.service';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { RouterModule, Routes } from '@angular/router';
 import { StateDashboardComponent } from './state-dashboard/state-dashboard.component';
+import { AgGridModule } from 'ag-grid-angular';
+
+
 
 const appRoutes: Routes = [
   { path: 'home', component: DashboardComponent},
@@ -27,8 +30,9 @@ const appRoutes: Routes = [
     RouterModule.forRoot(appRoutes),
     BrowserModule,
     HttpClientModule,
-    FormsModule
-    
+    FormsModule,
+    AgGridModule.withComponents([]),
+
   ],
   providers: [ApiService],
   bootstrap: [AppComponent]

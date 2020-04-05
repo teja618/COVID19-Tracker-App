@@ -126,3 +126,7 @@
     background-color: #ffffff;
     clip-path: circle(150% at 100% 0%);
    }
+
+   .ag-body-viewport {
+    overflow-y: scroll !important;
+}

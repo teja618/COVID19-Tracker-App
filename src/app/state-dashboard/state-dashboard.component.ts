@@ -6,6 +6,7 @@ import { ApiService } from '../api.service';
   templateUrl: './state-dashboard.component.html',
   styleUrls: ['./state-dashboard.component.css']
 })
+
 export class StateDashboardComponent implements OnInit {
 
   selectedState: string;
@@ -20,6 +21,27 @@ export class StateDashboardComponent implements OnInit {
     deaths: 0,
     new: ''
   }     
+  
+  statesData:any={
+    stats:[]
+  }
+
+
+  //Grid
+  columnDefs = [
+    { headerName: 'District Name', field: 'district' ,sortable:true, filter:true},
+    { headerName: 'Overall Cases', field: 'confirmed', sortable:true, filter:true},
+    { headerName: 'New Cases', field: 'delta.confirmed', sortable:true, filter:true}
+  ];
+
+rowData = [];
+
+private gridApi;
+private gridColumnApi;
+private overlayLoadingTemplate;
+private overlayNoRowsTemplate;
+domLayout: string;
+
 
   constructor(private apiService: ApiService) { }
 
@@ -27,10 +49,35 @@ export class StateDashboardComponent implements OnInit {
     this.selectedState="All";
     this.getCovidIndianStatesList();
     this.getStateCovidStats();
-
   }
 
+ 
 
+   onGridReady(params) {
+    this.gridApi = params.api;
+    this.gridColumnApi = params.columnApi;
+    this.gridApi.setDomLayout('autoHeight');    
+  }
+ 
+  onFirstDataRendered(params) {
+    params.api.sizeColumnsToFit();
+  }
+
+  getDistrictsData(stateName: string) {
+    this.apiService.getDistrictsCovid19Stats().subscribe((response:any)=>{
+      this.statesData.stats=response;
+      if (this.statesData.stats && this.statesData.stats.length) {
+        this.statesData.stats.map((item, index) => {
+          if(item.state==stateName){
+            this.statesData.stats=item.districtData;
+            if(this.statesData.stats.length>0){
+              this.rowData=this.statesData.stats;
+            }
+          }
+        });
+      }
+    });
+    }
 
   getStateCovidStats() {
     this.stateFlags.isStatsLoaded = false;
@@ -51,11 +98,11 @@ export class StateDashboardComponent implements OnInit {
           console.log(item);
           this.stateData.total = item.confirmed;
           this.stateData.active = item.active;
-          this.stateData.recovered = item.recovered;
+          this.stateData.recovered = item.deltarecovered;
           this.stateData.deaths = item.deaths;
-          this.stateData.new = item.delta.confirmed ? item.delta.confirmed : 0;
+          this.stateData.new = item.deltaconfirmed ? item.deltaconfirmed : 0;
           //this.stateData.critical = item.cases.critical ? item.cases.critical : 0;
-          this.stateData.newDeaths = item.delta.deaths ? item.delta.deaths : 0;
+          this.stateData.newDeaths = item.deltadeaths ? item.deltadeaths : 0;
         }
       })
     }
@@ -71,8 +118,10 @@ export class StateDashboardComponent implements OnInit {
             if(item.state!="Total"){
               this.stateData.stateList.push(item.state);
             }
-          })
+          }
+          )
         }
+      this.stateData.stateList.sort();
       this.stateFlags.isCountryListLoaded = true;
     }, (error) => {
       this.stateFlags.isError = true;
@@ -80,7 +129,9 @@ export class StateDashboardComponent implements OnInit {
   }
 
   onChangeState() {
-    this.selectedState=="All"?this.getStatsByState("Total"):this.getStatsByState(this.selectedState);    
+    this.selectedState=="All"?this.getStatsByState("Total"):this.getStatsByState(this.selectedState);  
+    this.selectedState=="All"?null :this.getDistrictsData(this.selectedState);
+    this.rowData=[];
   }
 
 }

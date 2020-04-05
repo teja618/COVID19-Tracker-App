@@ -9,12 +9,17 @@ export class ApiService {
   
   baseUrl: string = "https://covid-19-coronavirus-statistics.p.rapidapi.com/v1/";
   covidGlobalUrl = "https://covid-193.p.rapidapi.com/";
-  covidIndiaURL="https://api.covid19india.org/data.json";
+  covidIndiaURL="https://api.covid19india.org/";
 
   constructor(private http: HttpClient) { }
 
+  getDistrictsCovid19Stats(){
+    return this.http.get(this.covidIndiaURL+"v2/state_district_wise.json"
+    );
+  }
+
   getIndianStateCovid19Stats() {
-    return this.http.get(this.covidIndiaURL);
+    return this.http.get(this.covidIndiaURL+"data.json");
   }
 
   getCovid19Data() {
