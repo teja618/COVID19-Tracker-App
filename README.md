@@ -4,7 +4,7 @@
 
 #COVID19-INDIA-DistrictWise
 
-This is a simple angular app to track the dangerous COVID 19 stats of different countries.It is also reponsive to mobile web view.
+This is a simple angular app to track the dangerous COVID 19 stats of different countries.It is also responsive to mobile web view.
 
 A filter is available to get country specific COVID 19 data.
 
