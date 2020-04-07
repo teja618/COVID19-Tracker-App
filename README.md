@@ -33,7 +33,6 @@ Thanks to COVID19-India Ops(https://github.com/covid19india/api.git).
 
 Refer:
 
-![Screenshot 2020-04-07 at 2 05 28 PM](https://user-images.githubusercontent.com/28780687/78647992-f5c7c300-78d8-11ea-9566-ed146cfcd9fc.png)
-![Screenshot 2020-04-07 at 2 00 42 PM](https://user-images.githubusercontent.com/28780687/78648001-fb250d80-78d8-11ea-8537-20fee6cb1df8.png)
-
+![Screenshot 2020-04-07 at 3 10 09 PM](https://user-images.githubusercontent.com/28780687/78654582-5a3b5000-78e2-11ea-9489-3c9a430910c2.png)
+![Screenshot 2020-04-07 at 3 13 00 PM](https://user-images.githubusercontent.com/28780687/78654598-5f000400-78e2-11ea-9c5c-c1a9206277f7.png)
 
