@@ -57,29 +57,13 @@ stateData:any ={
     this.apiService.getIndianStateCovid19Stats().subscribe((response: any) => {
       console.log(response.statewise);
       this.stateData.stats = response && response.statewise.length ? response.statewise : [];
-      this.getStatsByState('Total');
       this.stateFlags.isStatsLoaded = true;
     }, (error) => {
       this.stateFlags.isError = true;
     });
   }
 
-  getStatsByState(stateName: string) {
-    if (this.stateData.stats && this.stateData.stats.length) {
-      this.stateData.stats.map((item, index) => {
-        if (item.state.toLowerCase() == stateName.toLowerCase()) {
-          this.stateData.total = item.confirmed;
-          this.stateData.active = item.active;
-          this.stateData.recovered = item.delta.recovered;
-          this.stateData.deaths = item.deaths;
-          this.stateData.new = item.delta.confirmed ? item.delta.confirmed : 0;
-          //this.stateData.critical = item.cases.critical ? item.cases.critical : 0;
-          this.stateData.newDeaths = item.delta.deaths ? item.delta.deaths : 0;
-        }
-      })
-    }
-  }
-  
+
 
   getCovidIndianStatesList() {
     this.stateFlags.isCountryListLoaded = false;
@@ -139,9 +123,7 @@ stateData:any ={
     }
   }
 
-  onChangeState() {
-    this.selectedState=="All"?this.getStatsByState("Total"):this.getStatsByState(this.selectedState);    
-  }
+
 
   onChangeCountry() {
     this.getStatsByCountry(this.selectedCountry);

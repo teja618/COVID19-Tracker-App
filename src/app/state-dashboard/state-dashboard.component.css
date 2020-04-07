@@ -130,3 +130,28 @@
    .ag-body-viewport {
     overflow-y: scroll !important;
 }
+
+.banner{
+display: flex;
+flex-direction: row;
+justify-content: center;
+line-height: 20px;
+font-family: "Archia";
+font-size: .8rem;
+font-weight: 600;
+color: white;
+background: #ef5350;}
+
+.banner .snippet{
+align-self: center;
+word-wrap: break-word;
+padding: 1.5rem;
+text-align: center;
+cursor: pointer;
+}
+
+@media only screen and (max-width:768px){
+.banner {
+    height: 7rem;
+}
+}

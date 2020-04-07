@@ -35,6 +35,7 @@
     "material-design-icons": "^3.0.1",
     "ng2-charts": "^2.3.0",
     "ngp-sort-pipe": "0.0.4",
+    "ngx-bootstrap": "^5.5.0",
     "rxjs": "~6.4.0",
     "tslib": "^1.10.0",
     "zone.js": "~0.9.1"

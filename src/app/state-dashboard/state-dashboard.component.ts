@@ -12,6 +12,24 @@ export class StateDashboardComponent implements OnInit {
   selectedState: string;
   stateFlags:any={};
 
+  infoArray=[
+    "Plan and calculate your essential needs for the next three weeks  ",
+    "Stand against FAKE news and illegit WhatsApp forwards! Do NOT ❌ forward a message until you verify the content it contains.",  
+    "Don't hoard groceries and essentials. Please ensure that people who are in need don't face a shortage because of you!  ",
+    "Be compassionate! Help those in need like the elderly and poor. They are facing a crisis which we can't even imagine!  ",
+    "Plan ahead! Take a minute and check how much supplies you have at home. Planning lets you buy exactly what you need.  ",
+    "Wash your hands with soap and water often, especially after a grociery run. Keep the virus at bay.  ",
+    "Be a true Indian. Show compassion, Be considerate,Help those in need. We will get through this!  ",
+    "Our brothers from the North-East are just as Indian as you! Help everyone during this crisis ❤️  ",
+    "If you have any medical queries, reach out to your state helpline, district administration or trusted doctors!  ",
+    "Help out the elderly by bringing them their groceries and other essentials. " ,
+    "Panic mode : OFF! ❌ ESSENTIALS ARE ON! ✔️  ",
+    "Plan and calculate your essential needs for the next three weeks  "
+  ];
+
+  randomNumber:number;
+  alertMessage:string;
+
   stateData:any ={
     stateList:[],
     stats:[],
@@ -52,9 +70,17 @@ RowsPresent: boolean=false;
   }
 
   ngOnInit() {
+    this.alertMessage=this.infoArray[1];
+    this.Display();
     this.selectedState="All";
     this.getCovidIndianStatesList();
     this.getStateCovidStats();
+  }
+  Display() {
+    setInterval(()=>{
+      this.randomNumber=Math.floor(Math.random() * this.infoArray.length);
+      this.alertMessage=this.infoArray[this.randomNumber];
+    },3000);  
   }
 
  

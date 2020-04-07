@@ -8,6 +8,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { RouterModule, Routes } from '@angular/router';
 import { StateDashboardComponent } from './state-dashboard/state-dashboard.component';
 import { AgGridModule } from 'ag-grid-angular';
+import { AlertModule } from 'ngx-bootstrap/alert';
 
 
 
@@ -32,6 +33,7 @@ const appRoutes: Routes = [
     HttpClientModule,
     FormsModule,
     AgGridModule.withComponents([]),
+    AlertModule.forRoot()
 
   ],
   providers: [ApiService],
