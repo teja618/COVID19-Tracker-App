@@ -1,3 +1,9 @@
+<br>
+<div class="banner fadeInUp"> 
+<div class="snippet">
+    Be compassionate! Help those in need like the elderly and poor. They are facing a crisis which we can't even imagine!
+    &nbsp;</div>
+</div>
 
 <div class="dashbord-container">
     <section *ngIf="!flags.isError">
@@ -46,6 +52,7 @@
                     </div>
                     <div class="covid-card-body">
                         <p class="loading-text" *ngIf="!flags.isStatsLoaded">Hold On...</p>
+                        
                         <div *ngIf="flags.isStatsLoaded">
                             <h2 class="count">{{data?.active}}</h2>
                             <div class="text-center card-desc">

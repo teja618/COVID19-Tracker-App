@@ -2,33 +2,29 @@
     padding: 8px;
     margin: 8px 0;
     border-radius: 8px;
-    font-family: 'Nunito', sans-serif;
-    box-shadow:
-    0 0.8px 0.8px rgba(0, 0, 0, 0.02),
-    0 2px 2px rgba(0, 0, 0, 0.028),
-    0 3.8px 3.8px rgba(0, 0, 0, 0.035),
-    0 6.7px 6.7px rgba(0, 0, 0, 0.042),
-    0 12.5px 12.5px rgba(0, 0, 0, 0.05),
-    0 30px 30px rgba(0, 0, 0, 0.07)
+    font-family: 'Archia';
+    color: whitesmoke;
+    box-shadow: 5px 5px 5px grey;
+
 }
 
 .covid-card-blue {
-    background: rgba(0, 123, 255, .0627451);
+    background: #1976D2;
 
 }
 
 .covid-card-red {
-    background: rgba(255, 7, 58, .12549);
+    background: #d33e3e;
 
 }
 
 .covid-card-green {
-    background: rgba(40, 167, 69, .12549);
+    background: #388E3C;
 
 }
 
 .covid-card-grey {
-    background: rgba(20, 20, 20, 0.063);
+    background: #455A64;
 
 }
 
@@ -94,7 +90,7 @@
     z-index: 2;
     opacity: 1;
     transition: opacity 300ms ease-in-out;
-    color: #606060;
+    color: #f8f5f5;
     
     
   }
@@ -126,3 +122,32 @@
     background-color: #ffffff;
     clip-path: circle(150% at 100% 0%);
    }
+
+   .loading-text{
+       color: whitesmoke;
+   }
+
+   .banner{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    line-height: 20px;
+    font-family: "Archia";
+    font-size: .8rem;
+    font-weight: 600;
+    color: white;
+    background: #03A9F4;}
+    
+    .banner .snippet{
+    align-self: center;
+    word-wrap: break-word;
+    padding: 1.5rem;
+    text-align: center;
+    cursor: pointer;
+    }
+    
+    @media only screen and (max-width:768px){
+    .banner {
+        height: 7rem;
+    }
+    }

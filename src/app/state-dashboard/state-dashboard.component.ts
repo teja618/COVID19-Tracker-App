@@ -18,7 +18,7 @@ export class StateDashboardComponent implements OnInit {
     "Don't hoard groceries and essentials. Please ensure that people who are in need don't face a shortage because of you!  ",
     "Be compassionate! Help those in need like the elderly and poor. They are facing a crisis which we can't even imagine!  ",
     "Plan ahead! Take a minute and check how much supplies you have at home. Planning lets you buy exactly what you need.  ",
-    "Wash your hands with soap and water often, especially after a grociery run. Keep the virus at bay.  ",
+    "Wash your hands with soap and water often, especially after a grocery run. Keep the virus at bay.  ",
     "Be a true Indian. Show compassion, Be considerate,Help those in need. We will get through this!  ",
     "Our brothers from the North-East are just as Indian as you! Help everyone during this crisis ❤️  ",
     "If you have any medical queries, reach out to your state helpline, district administration or trusted doctors!  ",

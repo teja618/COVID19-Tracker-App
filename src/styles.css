@@ -12,7 +12,6 @@
 
 
 
-
 * {
     margin: 0;
     padding: 0;
@@ -27,13 +26,20 @@ body {
 
 }
 
+@font-face {
+    font-family: 'SourceSerifPro';
+    src: url(/assets/SourceSerifPro.ttf) format("truetype");
+    font-weight:300;
+  }
+
 
 .info-text {
     margin: 0;
-    font-size: 0.9em;
-    font-weight: 600;
+    font-size: 1em;
+    font-weight: 500;
+    font-family: 'SourceSerifPro';
     text-transform: uppercase;
-    color: #303030;
+    color: balck;
     align-self: center;
 }
 

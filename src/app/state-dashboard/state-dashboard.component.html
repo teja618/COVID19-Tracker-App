@@ -4,7 +4,6 @@
         {{alertMessage}}  &nbsp;</div>
   </div>
 
-
   <div class="dashbord-container">
     <section *ngIf="!stateFlags.isError">
         <div class="flex-container">
@@ -111,6 +110,7 @@
 
 <div *ngIf=" RowsPresent "> 
 <h5 *ngIf="selectedState!= 'All'" class="info-text"> District wise Results Of {{selectedState}}</h5>
+<br>
 <ag-grid-angular *ngIf="selectedState!='All' " 
 style="width: auto;"
     class="ag-theme-bootstrap"
