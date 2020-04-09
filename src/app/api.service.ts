@@ -5,13 +5,18 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root'
 })
 export class ApiService {
+
   
-  
+  backToStateName:string;
   baseUrl: string = "https://covid-19-coronavirus-statistics.p.rapidapi.com/v1/";
   covidGlobalUrl = "https://covid-193.p.rapidapi.com/";
   covidIndiaURL="https://api.covid19india.org/";
 
   constructor(private http: HttpClient) { }
+
+  getPatientsData(){
+    return this.http.get(this.covidIndiaURL+"raw_data.json");
+  }
 
   getDistrictsCovid19Stats(){
     return this.http.get(this.covidIndiaURL+"v2/state_district_wise.json"

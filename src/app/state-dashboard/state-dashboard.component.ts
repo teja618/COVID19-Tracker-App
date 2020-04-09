@@ -1,5 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnChanges } from '@angular/core';
 import { ApiService } from '../api.service';
+import { Route } from '@angular/compiler/src/core';
+import { RouterLinkRendererComponent } from '../router-link-renderer/router-link-renderer.component';
+import { ActivatedRoute, ParamMap } from '@angular/router';
 
 @Component({
   selector: 'app-state-dashboard',
@@ -41,13 +44,21 @@ export class StateDashboardComponent implements OnInit {
   }     
   
   statesData:any={
-    stats:[]
+    stats:[],
+    pats:[]
   }
 
 
   //Grid
   columnDefs = [
-    { headerName: 'District Name', field: 'district' ,sortable:true, filter:true},
+    { headerName: 'District Name', field: 'district' ,sortable:true, filter:true, 
+    cellRendererFramework: RouterLinkRendererComponent,
+    cellRendererParams: {
+      paramStateName:this.selectedState,
+      inRouterLink: '/patients-data' 
+    }
+  },
+  
     { headerName: 'Overall Cases', field: 'confirmed', sortable:true, filter:true},
     { headerName: 'New Cases', field: 'delta.confirmed', sortable:true, filter:true}
   ];
@@ -60,33 +71,46 @@ overlayLoadingTemplate;
 overlayNoRowsTemplate;
 domLayout: string;
 RowsPresent: boolean=false;
+  backedState: string;
 
 
 
-  constructor(private apiService: ApiService) { 
-    this.overlayNoRowsTemplate = "<span ag-overlay-loading-center>This is a custom 'no rows' overlay</span>";
-    this.overlayLoadingTemplate =
-    '<span class="ag-overlay-loading-center">Please wait while your rows are loading</span>';
+  constructor(private apiService: ApiService,route:ActivatedRoute) { 
+    route.paramMap.subscribe((params:ParamMap)=>{
+      this.backedState=params.get('id');  
+    })
+    console.log(this.backedState);
+    if(this.backedState!=null){
+      this.selectedState=this.backedState;
+      this.getDistrictsData(this.selectedState);
+    }else{
+      this.selectedState="All";
+    }
   }
 
   ngOnInit() {
     this.alertMessage=this.infoArray[1];
-    this.Display();
-    this.selectedState="All";
+    this.Display();  
     this.getCovidIndianStatesList();
     this.getStateCovidStats();
   }
+
+
+
+
+
   Display() {
     setInterval(()=>{
       this.randomNumber=Math.floor(Math.random() * this.infoArray.length);
       this.alertMessage=this.infoArray[this.randomNumber];
-    },3000);  
+    },2000);  
   }
 
  
 
    onGridReady(params) {
     this.gridApi = params.api;
+    //this.gridApi.showLoadingOverlay();
     this.gridColumnApi = params.columnApi;
     this.gridApi.setDomLayout('autoHeight');    
   }
@@ -104,8 +128,8 @@ RowsPresent: boolean=false;
             this.statesData.stats=item.districtData;
             if(this.statesData.stats.length>0){
               this.RowsPresent=true;
-              this.rowData=  this.statesData.stats          
-              }
+              this.rowData= this.statesData.stats;
+            }
           }
         });
       }
@@ -128,7 +152,6 @@ RowsPresent: boolean=false;
     if (this.stateData.stats && this.stateData.stats.length) {
       this.stateData.stats.map((item, index) => {
         if (item.state.toLowerCase() === stateName.toLowerCase()) {
-          console.log(item);
           this.stateData.total = item.confirmed;
           this.stateData.active = item.active;
           this.stateData.recovered = item.recovered;
@@ -166,6 +189,12 @@ RowsPresent: boolean=false;
     this.RowsPresent=false;
     this.selectedState=="All"?this.getStatsByState("Total"):this.getStatsByState(this.selectedState);  
     this.selectedState=="All"?null :this.getDistrictsData(this.selectedState);
+    this.apiService.backToStateName=this.selectedState;
+  }
+
+
+  setup(){
+    this.selectedState="Andhra Pradesh";
   }
 
 }

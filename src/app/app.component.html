@@ -11,12 +11,12 @@
     <ul class="navbar-nav mr-auto">
 
       <li [routerLinkActive]="['active']">
-        <a class="nav-link"  routerLink="/home">Global Tracker</a>
-      </li>
-      <li [routerLinkActive]="['active']">
-        <a class="nav-link"  routerLink="/indian-states">India Tracker</a>
+        <a class="nav-link"   routerLink="/home" (click)="toggleNavbar()">Global Tracker</a>
       </li>
 
+      <li [routerLinkActive]="['active']">
+        <a class="nav-link"  routerLink="/indian-states" (click)="toggleNavbar()">India Tracker</a>
+      </li>
 
     </ul>
   </div>

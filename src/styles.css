@@ -3,12 +3,16 @@
 @import url('https://fonts.googleapis.com/css?family=Cabin&display=swap');
 @import '~material-design-icons/iconfont/material-icons.css';
 @import url("https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css");
-@import "~ag-grid/dist/styles/ag-grid.css";
-@import "~ag-grid/dist/styles/ag-theme-blue.css";
-@import "~ag-grid/dist/styles/ag-theme-balham";
-@import "~ag-grid/dist/styles/ag-theme-material";
-@import "~ag-grid/dist/styles/ag-theme-dark";
-@import "~ag-grid/dist/styles/ag-theme-bootstrap";
+@import "~ag-grid-community/dist/styles/ag-grid.css";
+@import "~ag-grid-community/dist/styles/ag-theme-blue.css";
+@import "~ag-grid-community/dist/styles/ag-theme-balham";
+@import "~ag-grid-community/dist/styles/ag-theme-material";
+@import "~ag-grid-community/dist/styles/ag-theme-dark";
+@import "~ag-grid-community/dist/styles/ag-theme-bootstrap";
+@import "~ag-grid-community/dist/styles/ag-theme-alpine-dark";
+@import "~ag-grid-community/dist/styles/ag-theme-balham-dark";
+
+
 
 
 
@@ -19,7 +23,7 @@
 
 body {
     font-family: 'Portfolio Regular' !important;
-    background: #f1f1f1 !important;
+    background: whitesmoke !important;
     box-sizing: border-box;
     -webkit-overflow-scrolling: touch;
     overflow: auto;
@@ -39,7 +43,7 @@ body {
     font-weight: 500;
     font-family: 'SourceSerifPro';
     text-transform: uppercase;
-    color: balck;
+    color: black;
     align-self: center;
 }
 
@@ -50,6 +54,15 @@ body {
 }
 
 
+
+    .ag-header {
+        text-shadow: deeppink;
+    }
+
+
+.ag-theme-balham {
+        balham-active-color: deeppink
+}
 
 .flex-container {
     display: flex;

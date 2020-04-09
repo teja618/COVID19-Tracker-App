@@ -31,7 +31,9 @@
                       <p>Overall COVID-19 Cases</p>
                     </div>
                     <div class="covid-card-body">
-                        <p class="loading-text" *ngIf="!flags.isStatsLoaded">Hold On...</p>
+                        <p class= "loading-text" *ngIf="!flags.isStatsLoaded">                 
+                            <span class="spinner-border" *ngIf="!flags.isStatsLoaded"></span>Loading..
+                        </p>
                         <div *ngIf="flags.isStatsLoaded">
                             <h2 class="count">{{data?.total}}</h2>
                             <div class="text-center card-desc">
@@ -51,7 +53,10 @@
                       <p>Active COVID-19 Positive Cases</p>
                     </div>
                     <div class="covid-card-body">
-                        <p class="loading-text" *ngIf="!flags.isStatsLoaded">Hold On...</p>
+                        <p class= "loading-text" *ngIf="!flags.isStatsLoaded">                 
+                            <span class="spinner-border" *ngIf="!flags.isStatsLoaded"></span>Loading..
+                        </p>
+
                         
                         <div *ngIf="flags.isStatsLoaded">
                             <h2 class="count">{{data?.active}}</h2>
@@ -72,7 +77,9 @@
                       <p>Recovered COVID-19  Cases</p>
                     </div>
                     <div class="covid-card-body">
-                        <p class="loading-text" *ngIf="!flags.isStatsLoaded">Hold On...</p>
+                        <p class= "loading-text" *ngIf="!flags.isStatsLoaded">                 
+                            <span class="spinner-border" *ngIf="!flags.isStatsLoaded"></span>Loading..
+                        </p>
 
                         <div *ngIf="flags.isStatsLoaded">
                             <h2 class="count">{{data?.recovered}}</h2>
@@ -94,8 +101,10 @@
                       </p>
                     </div>
                     <div class="covid-card-body">
-                        <p class="loading-text" *ngIf="!flags.isStatsLoaded">Hold On...</p>
-
+                        <p class= "loading-text" *ngIf="!flags.isStatsLoaded">                 
+                            <span class="spinner-border" *ngIf="!flags.isStatsLoaded"></span>Loading..
+                        </p>
+                        
                         <div *ngIf="flags.isStatsLoaded">
                             <h2 class="count">{{data?.deaths}}</h2>
                             <div class="text-center card-desc">

@@ -1,0 +1,32 @@
+<div class="jumbotron">
+    <h1 style="font-weight: bolder; font-family: Arial, Helvetica, sans-serif;">Patients-Information</h1>      
+    <p style="font-family: Arial, Helvetica, sans-serif; font-weight: bold;">The below patient information of {{districtName}} district has been gathered from different sources which may be subjected to change.
+        More Details will be updated soon.
+    </p>
+    <p style="font-family: Arial, Helvetica, sans-serif; font-weight: bold;">Mean While - Stay Home ! Stay Safe!</p>
+</div>      
+
+
+<div class="heading">
+    <button class="btn btn-dark" (click)="goBack()" >&laquo; Go To Previous View</button>
+    <br><br>
+    <p class="message" style="font-family: Arial, Helvetica, sans-serif; color: black; font-size: large;">     
+        <span class="material-icons">info
+        </span>
+        **Please resize,sort the columns based on your comfortable view**</p>
+</div>
+
+<div>
+<ag-grid-angular *ngIf="selectedState!='All' " 
+style="width: auto;"
+    class="ag-theme-balham"
+    [pagination]="true"
+    [rowData]="rowData"
+    [columnDefs]="columnDefs"
+    (gridReady)="onGridReady($event)"
+    [domLayout]="domLayout"
+    (firstDataRendered)="onFirstDataRendered($event)"
+    >
+</ag-grid-angular>
+
+</div>
