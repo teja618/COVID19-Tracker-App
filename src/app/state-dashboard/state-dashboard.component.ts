@@ -14,6 +14,8 @@ export class StateDashboardComponent implements OnInit {
 
   selectedState: string;
   stateFlags:any={};
+  darkMode:boolean=false;
+  lightMode:boolean=true;
 
   infoArray=[
     "Plan and calculate your essential needs for the next three weeks  ",

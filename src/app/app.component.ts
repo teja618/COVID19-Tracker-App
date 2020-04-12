@@ -8,10 +8,9 @@ import { ApiService } from './api.service';
 })
 export class AppComponent {
 
-  classStatesActive='nav-item active'
-  classHomeActive="nav-item active"
-
-  navbarOpen = false;
+   darkMode:boolean=false;
+   lightMode:boolean=true;
+  navbarOpen = true;
 
   toggleNavbar() {
     this.navbarOpen = !this.navbarOpen;

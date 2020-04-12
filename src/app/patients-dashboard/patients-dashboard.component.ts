@@ -20,6 +20,8 @@ overlayLoadingTemplate;
 overlayNoRowsTemplate;
 domLayout: string;
 RowsPresent: boolean=false;
+darkMode:boolean=false;
+lightMode:boolean=true;
 
   //Grid
   columnDefs = [

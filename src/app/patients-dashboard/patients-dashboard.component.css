@@ -24,3 +24,7 @@ font-weight: bolder;
     transition: all .2s ease-in-out;
     font-weight: 1500;
 }
+
+pat-info{
+color: rgb(4,123,255)
+}

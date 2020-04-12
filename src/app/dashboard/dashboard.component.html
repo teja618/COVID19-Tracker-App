@@ -8,9 +8,10 @@
 <div class="dashbord-container">
     <section *ngIf="!flags.isError">
         <div class="flex-container">
-            <h5 *ngIf="selectedCountry.toLowerCase() == 'all'" class="info-text">Showing results for all locations</h5>
-            <h5 *ngIf="selectedCountry.toLowerCase() != 'all'" class="info-text">Showing results for {{selectedCountry}}</h5>
-
+            <div class="update">
+            <h5 *ngIf="selectedCountry.toLowerCase() == 'all'" class="info-text-light ">Showing results for all locations</h5>
+            <h5 *ngIf="selectedCountry.toLowerCase() != 'all'" class="info-text-light">Showing results for {{selectedCountry}}</h5>
+        </div>
             <form class="form-inline">
                 <label style="padding-right: 10px;" for="exampleFormControlSelect1">Location</label>
                 <select class="form-control" name="country" id="exampleFormControlSelect1" [(ngModel)]="selectedCountry" (change)="onChangeCountry()">  
@@ -97,7 +98,7 @@
                     <span class="material-icons">expand_more
                     </span>
                     <div class="answer">
-                      <p>Dead COVID-19 Cases. RIP:-( 
+                      <p>Dead .. RIP:-( 
                       </p>
                     </div>
                     <div class="covid-card-body">

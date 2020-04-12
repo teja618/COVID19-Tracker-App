@@ -4,7 +4,7 @@
 @import '~material-design-icons/iconfont/material-icons.css';
 @import url("https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css");
 @import "~ag-grid-community/dist/styles/ag-grid.css";
-@import "~ag-grid-community/dist/styles/ag-theme-blue.css";
+@import "~ag-grid-community/dist/styles/ag-theme-blue";
 @import "~ag-grid-community/dist/styles/ag-theme-balham";
 @import "~ag-grid-community/dist/styles/ag-theme-material";
 @import "~ag-grid-community/dist/styles/ag-theme-dark";
@@ -37,7 +37,7 @@ body {
   }
 
 
-.info-text {
+ .info-text-dark{
     margin: 0;
     font-size: 1em;
     font-weight: 500;
@@ -46,6 +46,31 @@ body {
     color: black;
     align-self: center;
 }
+
+.info-text-light {
+    margin: 0;
+    font-size: 1em;
+    font-weight: 500;
+    font-family: 'SourceSerifPro';
+    text-transform: uppercase;
+    color: rgb(4,123,255);
+    align-self: center;
+}
+
+.update{
+    background: rgba(108,117,125,.0627451);
+    margin-bottom: .5rem;
+    padding: .5rem;
+    border-radius: 5px;
+    transition: all .2s ease-in-out;
+    font-weight: 1500;
+    }
+    
+    .update .h3{
+        font-size: 24px;
+        font-weight: bolder;
+    
+    }
 
 .card-container {
     margin-top: 8px;
@@ -60,9 +85,6 @@ body {
     }
 
 
-.ag-theme-balham {
-        balham-active-color: deeppink
-}
 
 .flex-container {
     display: flex;

@@ -4,8 +4,14 @@
     border-radius: 8px;
     font-family: 'Archia';
     color: whitesmoke;
-    box-shadow: 5px 5px 5px grey;
+    box-shadow: 5px 5px 5px grey; 
+    transition: all 150ms ease-in-out;
 }
+
+.covid-card:hover{
+    box-shadow: 9px 9px 9px 2px grey; 
+}
+
 
 .covid-card-blue {
     background: #1976D2;
@@ -130,7 +136,19 @@
     color: whitesmoke;
 }
 
-.banner{
+.banner-light{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    line-height: 20px;
+    font-family: "Archia";
+    font-size: .8rem;
+    font-weight: 600;
+    color: white;
+    background: #03A9F4;
+    }
+
+.banner-dark{
 display: flex;
 flex-direction: row;
 justify-content: center;
@@ -139,9 +157,10 @@ font-family: "Archia";
 font-size: .8rem;
 font-weight: 600;
 color: white;
-background: #03A9F4;}
+background: black;
+}
 
-.banner .snippet{
+.snippet{
 align-self: center;
 word-wrap: break-word;
 padding: 1.5rem;
@@ -150,22 +169,11 @@ cursor: pointer;
 }
 
 @media only screen and (max-width:768px){
-.banner {
+.banner-dark {
+    height: 7rem;
+}
+.banner-light {
     height: 7rem;
 }
 }
 
-.update{
-background: rgba(108,117,125,.0627451);
-margin-bottom: .5rem;
-padding: .5rem;
-border-radius: 5px;
-transition: all .2s ease-in-out;
-font-weight: 1500;
-}
-
-.update .h3{
-    font-size: 24px;
-    font-weight: bolder;
-
-}

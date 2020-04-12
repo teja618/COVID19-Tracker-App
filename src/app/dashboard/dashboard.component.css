@@ -4,8 +4,12 @@
     border-radius: 8px;
     font-family: 'Archia';
     color: whitesmoke;
-    box-shadow: 5px 5px 5px grey;
+    box-shadow: 5px 5px 5px grey; 
+    transition: all 150ms ease-in-out;
+}
 
+.covid-card:hover{
+    box-shadow: 9px 9px 9px 2px grey; 
 }
 
 .covid-card-blue {

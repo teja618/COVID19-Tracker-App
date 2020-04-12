@@ -1,16 +1,16 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+<nav class="navbar navbar-expand-lg " [ngClass]="{ ' navbar-dark bg-dark': darkMode } ">
   <a class="navbar-brand brand" routerLink="/home"><i class="fas fa-briefcase-medical"></i> COVID-19</a>
 
 
-  <button class="navbar-toggler" type="button" (click)="toggleNavbar()">
-    <span class="navbar-toggler-icon"></span>
+  <button class="navbar-toggler "  [ngClass]="{ ' navbar-dark': darkMode , ' navbar-light':!darkMode} " type="button" (click)="toggleNavbar()">
+    <span class="navbar-toggler-icon " [ngClass]="{ ' navbar-dark': darkMode , ' navbar-light':!darkMode} "></span>
   </button>
 
 
-  <div class="collapse navbar-collapse" [ngClass]="{ 'show': navbarOpen }">
+  <div class="collapse navbar-collapse " [ngClass]="{ 'show': navbarOpen }">
     <ul class="navbar-nav mr-auto">
 
-      <li [routerLinkActive]="['active']">
+      <li [routerLinkActive]="['active'] ">
         <a class="nav-link"   routerLink="/home" (click)="toggleNavbar()">Global Tracker</a>
       </li>
 
