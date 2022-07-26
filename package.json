@@ -30,7 +30,7 @@
     "chartjs-plugin-datalabels": "^0.7.0",
     "chartjs-plugin-piechart-outlabels": "^0.1.4",
     "firebase": ">= 5.5.7 <8",
-    "highcharts": "^8.0.4",
+    "highcharts": "^9.0.0",
     "highcharts-angular": "^2.4.0",
     "material-design-icons": "^3.0.1",
     "ng2-charts": "^2.3.0",
